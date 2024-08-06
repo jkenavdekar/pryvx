@@ -18,14 +18,27 @@ The PSI Package provides a simple implementation of Private Set Intersection (PS
 
 An Oblivious Pseudorandom Function (OPRF) is a cryptographic protocol that allows a client to evaluate a pseudorandom function (PRF) on an input, using a key held by a server, without revealing the input to the server and without the client learning the key. The server also does not learn the input provided by the client.
 
-#### Mathematical Definition
+## Mathematical Definitions
 
-1. **Pseudorandom Function (PRF)**:
-   - A PRF is a function \( F: K \times X \to Y \) where \( K \) is the key space, \( X \) is the input space, and \( Y \) is the output space. Given a key \( k \in K \), \( F(k, \cdot) \) is computationally indistinguishable from a truly random function to any efficient adversary who does not know \( k \).
+### Pseudorandom Function (PRF)
 
-2. **OPRF Protocol**:
-   - The OPRF protocol involves two parties: a client and a server. The server holds a secret key \( k \), and the client holds an input \( x \in X \).
-   - The protocol ensures that the client learns \( F(k, x) \) without learning \( k \) and without the server learning \( x \).
+A **Pseudorandom Function (PRF)** is a function \( F: K \times X \to Y \) where:
+- \( K \) is the key space,
+- \( X \) is the input space,
+- \( Y \) is the output space.
+
+Given a key \( k \in K \), the function \( F(k, \cdot) \) is computationally indistinguishable from a truly random function to any efficient adversary who does not know \( k \).
+
+### OPRF Protocol
+
+The **Oblivious Pseudorandom Function (OPRF) Protocol** involves two parties:
+- **Server:** Holds a secret key \( k \).
+- **Client:** Holds an input \( x \in X \).
+
+The protocol ensures that:
+- The client learns \( F(k, x) \) without learning \( k \).
+- The server learns nothing about \( x \).
+
 
 ### PSI Using OPRF
 
